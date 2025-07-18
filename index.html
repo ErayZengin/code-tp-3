@@ -7,17 +7,40 @@
     <link rel="stylesheet" href="style.css" />
     <meta
       name="description"
-      content=" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iste, ab
-      non, fugit, neque sequi dolores quos officiis nemo cum sunt illum. Porro
-      maxime vero, aut velit quidem veritatis sequi."
+      content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iste, ab non, fugit, neque sequi dolores quos officiis nemo cum sunt illum."
     />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
   </head>
 
-
   <body>
-    <h1>Mes posts</h1>
-    <div id="posts-container"> </div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">MonSite</div>
+        <button class="burger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Mes posts</h1>
+      <input
+        type="text"
+        id="recherche"
+        placeholder="Rechercher un article..."
+        aria-label="Rechercher"
+      />
+      <div id="posts-container"></div>
+    </main>
+
     <script src="./script.js"></script>
   </body>
 </html>
