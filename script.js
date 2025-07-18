@@ -5,12 +5,10 @@ const liensNavigation = document.querySelector('.liens-navigation')
 
 let articles = []
 
-// Menu burger
 boutonMenu.addEventListener('click', () => {
   liensNavigation.classList.toggle('active')
 })
 
-// Récupération des articles
 fetch('https://jsonplaceholder.typicode.com/posts')
   .then(reponse => reponse.json())
   .then(donnees => {
@@ -43,7 +41,6 @@ function afficherArticles(liste) {
   })
 }
 
-// Filtrage dynamique
 champRecherche.addEventListener('input', () => {
   const texte = champRecherche.value.toLowerCase()
   const filtrés = articles.filter(article =>

@@ -52,7 +52,6 @@ body {
   border-radius: 2px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .menu-burger {
     display: flex;
