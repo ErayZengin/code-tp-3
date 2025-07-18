@@ -1,50 +1,54 @@
-const postsContainer = document.getElementById('posts-container')
-const recherche = document.getElementById('recherche')
-const burger = document.querySelector('.burger')
-const navLinks = document.querySelector('.nav-links')
+const conteneurArticles = document.getElementById('conteneur-articles')
+const champRecherche = document.getElementById('champ-recherche')
+const boutonMenu = document.querySelector('.menu-burger')
+const liensNavigation = document.querySelector('.liens-navigation')
 
-let postsData = []
+let articles = []
 
-burger.addEventListener('click', () => {
-  navLinks.classList.toggle('active')
+// Menu burger
+boutonMenu.addEventListener('click', () => {
+  liensNavigation.classList.toggle('active')
 })
 
+// Récupération des articles
 fetch('https://jsonplaceholder.typicode.com/posts')
-  .then(response => response.json())
-  .then(data => {
-    postsData = data
-    displayPosts(data)
+  .then(reponse => reponse.json())
+  .then(donnees => {
+    articles = donnees
+    afficherArticles(articles)
   })
-  .catch(error => {
-    console.error('Erreur de chargement des posts', error)
-    const errorMessage = document.createElement('p')
-    errorMessage.textContent = 'Erreur. Réessayez plus tard.'
-    errorMessage.style.color = 'red'
-    postsContainer.appendChild(errorMessage)
+  .catch(erreur => {
+    console.error('Erreur lors du chargement', erreur)
+    const messageErreur = document.createElement('p')
+    messageErreur.textContent = 'Erreur. Veuillez réessayer plus tard.'
+    messageErreur.style.color = 'red'
+    conteneurArticles.appendChild(messageErreur)
   })
-function displayPosts(posts) {
-  postsContainer.innerHTML = ''
-  posts.forEach(post => {
-    const postElement = document.createElement('div')
-    postElement.classList.add('post')
 
-    const title = document.createElement('h2')
-    title.textContent = post.title
+function afficherArticles(liste) {
+  conteneurArticles.innerHTML = ''
+  liste.forEach(article => {
+    const bloc = document.createElement('div')
+    bloc.classList.add('article')
 
-    const body = document.createElement('p')
-    body.textContent = post.body
+    const titre = document.createElement('h2')
+    titre.textContent = article.title
 
-    postElement.appendChild(title)
-    postElement.appendChild(body)
-    postsContainer.appendChild(postElement)
+    const contenu = document.createElement('p')
+    contenu.textContent = article.body
+
+    bloc.appendChild(titre)
+    bloc.appendChild(contenu)
+    conteneurArticles.appendChild(bloc)
   })
 }
 
-recherche.addEventListener('input', () => {
-  const query = recherche.value.toLowerCase()
-  const filtered = postsData.filter(post =>
-    post.title.toLowerCase().includes(query) ||
-    post.body.toLowerCase().includes(query)
+// Filtrage dynamique
+champRecherche.addEventListener('input', () => {
+  const texte = champRecherche.value.toLowerCase()
+  const filtrés = articles.filter(article =>
+    article.title.toLowerCase().includes(texte) ||
+    article.body.toLowerCase().includes(texte)
   )
-  displayPosts(filtered)
+  afficherArticles(filtrés)
 })

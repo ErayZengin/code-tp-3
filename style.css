@@ -6,7 +6,7 @@ body {
   padding: 1rem;
 }
 
-.navbar {
+.barre-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   font-weight: bold;
 }
 
-.nav-links {
+.liens-navigation {
   list-style: none;
   display: flex;
   gap: 1rem;
@@ -28,12 +28,12 @@ body {
   padding: 0;
 }
 
-.nav-links li a {
+.liens-navigation li a {
   color: white;
   text-decoration: none;
 }
 
-.burger {
+.menu-burger {
   display: none;
   flex-direction: column;
   justify-content: space-around;
@@ -44,7 +44,7 @@ body {
   cursor: pointer;
 }
 
-.burger span {
+.menu-burger span {
   display: block;
   height: 3px;
   width: 100%;
@@ -52,12 +52,13 @@ body {
   border-radius: 2px;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .burger {
+  .menu-burger {
     display: flex;
   }
 
-  .nav-links {
+  .liens-navigation {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -68,12 +69,12 @@ body {
     padding: 1rem;
   }
 
-  .nav-links.active {
+  .liens-navigation.active {
     display: flex;
   }
 }
 
-#recherche {
+#champ-recherche {
   width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
@@ -81,7 +82,7 @@ body {
   border: 1px solid #000;
 }
 
-.post {
+.article {
   border: 1px solid #000000;
   background-color: #ffd2d2;
   padding: 1rem;
@@ -92,7 +93,8 @@ body {
   body {
     padding: 2rem;
   }
-  .post {
+
+  .article {
     padding: 2rem;
     border: 2px solid;
   }

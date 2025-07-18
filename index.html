@@ -1,27 +1,23 @@
-<!DOCTYPE html>
 <html lang="fr-FR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mes posts</title>
+    <title>Mes articles</title>
     <link rel="stylesheet" href="style.css" />
-    <meta
-      name="description"
-      content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iste, ab non, fugit, neque sequi dolores quos officiis nemo cum sunt illum."
-    />
+    <meta name="description" content="Liste d’articles avec recherche et navigation responsive." />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
   </head>
 
   <body>
     <header>
-      <nav class="navbar">
+      <nav class="barre-navigation">
         <div class="logo">MonSite</div>
-        <button class="burger" aria-label="Menu">
+        <button class="menu-burger" aria-label="Menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="liens-navigation">
           <li><a href="#">Accueil</a></li>
           <li><a href="#">Articles</a></li>
           <li><a href="#">À propos</a></li>
@@ -31,16 +27,16 @@
     </header>
 
     <main>
-      <h1>Mes posts</h1>
+      <h1>Mes articles</h1>
       <input
         type="text"
-        id="recherche"
+        id="champ-recherche"
         placeholder="Rechercher un article..."
         aria-label="Rechercher"
       />
-      <div id="posts-container"></div>
+      <div id="conteneur-articles"></div>
     </main>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
