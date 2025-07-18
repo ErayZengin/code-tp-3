@@ -1,6 +1,6 @@
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #ffffff;
+  background-color: #feeaea;
   color: #000000;
   margin: 0;
   padding: 1rem;
@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #b5252a;
+  background-color: #b5484c;
   padding: 1rem;
   color: white;
 }
